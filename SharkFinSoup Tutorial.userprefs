@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Completed-Assets\Prefabs\MoveIt.cs">
+    <Files>
+      <File FileName="Assets\_Completed-Assets\Scripts\Spawning.cs" Line="13" Column="51" />
+      <File FileName="Assets\_Completed-Assets\Scripts\CompletePlayerController.cs" Line="31" Column="11" />
+      <File FileName="Assets\_Completed-Assets\Prefabs\MoveIt.cs" Line="13" Column="2" />
+      <File FileName="Assets\DestroyOvertime.cs" Line="9" Column="33" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
