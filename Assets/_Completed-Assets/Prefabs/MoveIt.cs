@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveIt : MonoBehaviour {
-	public float speed = 25f;
+	public float speed = 5f;
 
 	private Vector2 dir; 
 
@@ -20,5 +20,13 @@ public class MoveIt : MonoBehaviour {
 
 	public void setDirection(Vector2 chosenDir){
 		dir = chosenDir;
+	}
+
+	public void setSpeed (float chosenSpeed){
+		speed = chosenSpeed;
+	}
+
+	public float getSpeed(){
+		return speed;
 	}
 }

@@ -14,7 +14,7 @@ public class Spawning : MonoBehaviour {
 	public int start;
 	public int interval;
 
-	public float increaseSpeedAmount = 2.0f;
+	public float increaseSpeedAmount = 1000.0f;
 
 	private GameObject[] chosenSpawnSide;
 
@@ -79,7 +79,7 @@ public class Spawning : MonoBehaviour {
 
 			// Determine which direction to move in 
 			/* 1 - top side, 2 - btm side, 3 - left side, 4 - right side */
-			Vector2 chosenDirection;
+			Vector2 chosenDirection = new Vector2 (speed, speed);
 			switch (randSide) {
 			case 1:
 				chosenDirection = new Vector2 (0, -speed);
@@ -97,10 +97,6 @@ public class Spawning : MonoBehaviour {
 				chosenDirection = new Vector2(-speed, 0);
 				break;
 
-			// Shouldn't happen but setting it just in case and to solve compilation errors
-			default:
-				chosenDirection = new Vector2 (speed, speed);
-				break;
 			}
 
 			item.GetComponent<MoveIt>().setDirection (chosenDirection);
