@@ -14,7 +14,7 @@ public class Spawning : MonoBehaviour {
 	public int start;
 	public int interval;
 
-	public float increaseSpeedAmount = 500.0f;
+	public float increaseSpeedAmount = 10.0f;
 
 	private GameObject[] chosenSpawnSide;
 
@@ -30,10 +30,10 @@ public class Spawning : MonoBehaviour {
 
 	void spawnRocks(){
 		// Randomly selecting which side the Sharks will spawn from 
-		int randSide = Random.Range (1, 5);
+		int randSide1 = Random.Range (2, 4);
 
 		// 1 - top side, 2 - btm side, 3 - left side, 4 - right side
-		switch (randSide) {
+		switch (randSide1) {
 		case 1:
 			chosenSpawnSide = spawnSide1;
 			break;
@@ -80,7 +80,7 @@ public class Spawning : MonoBehaviour {
 			// Determine which direction to move in 
 			/* 1 - top side, 2 - btm side, 3 - left side, 4 - right side */
 			Vector2 chosenDirection = new Vector2 (plusSpeed, plusSpeed);
-			switch (randSide) {
+			switch (randSide1) {
 
 			case 1:
 				chosenDirection = new Vector2 (0, -plusSpeed);
