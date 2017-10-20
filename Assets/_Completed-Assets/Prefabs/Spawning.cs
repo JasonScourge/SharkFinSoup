@@ -14,7 +14,7 @@ public class Spawning : MonoBehaviour {
 	public int start;
 	public int interval;
 
-	public float increaseSpeedAmount = 1000.0f;
+	public float increaseSpeedAmount = 500.0f;
 
 	private GameObject[] chosenSpawnSide;
 
@@ -74,27 +74,28 @@ public class Spawning : MonoBehaviour {
 			GameObject item = Instantiate (shark, chosenSpawnPoint, Quaternion.identity);
 
 			// Changing the speed and direction of the objects moving
-			float speed = item.GetComponent<MoveIt> ().speed + increaseSpeedAmount;
-			item.GetComponent<MoveIt> ().speed = speed;
+			float plusSpeed = item.GetComponent<MoveIt> ().speed + increaseSpeedAmount;
+			item.GetComponent<MoveIt> ().setSpeed(plusSpeed);
 
 			// Determine which direction to move in 
 			/* 1 - top side, 2 - btm side, 3 - left side, 4 - right side */
-			Vector2 chosenDirection = new Vector2 (speed, speed);
+			Vector2 chosenDirection = new Vector2 (plusSpeed, plusSpeed);
 			switch (randSide) {
+
 			case 1:
-				chosenDirection = new Vector2 (0, -speed);
+				chosenDirection = new Vector2 (0, -plusSpeed);
 				break;
 
 			case 2:
-				chosenDirection = new Vector2 (0, speed);
+				chosenDirection = new Vector2 (0, plusSpeed);
 				break;
 
 			case 3:
-				chosenDirection = new Vector2(speed, 0);
+				chosenDirection = new Vector2(plusSpeed, 0);
 				break;
 
 			case 4:
-				chosenDirection = new Vector2(-speed, 0);
+				chosenDirection = new Vector2(-plusSpeed, 0);
 				break;
 
 			}
