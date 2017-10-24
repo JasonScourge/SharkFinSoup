@@ -14,6 +14,12 @@ public class PrintDebug : MonoBehaviour {
 		}
 		print ("Randsides original List = " + msg1);
 
+		string msg2 = "After removal Randsides: ";
+		for (int i = 0; i < randSides.Count; i+= 1){
+			msg2 = msg2 + randSides[i] + ", ";
+		}
+		print ("Randsides original List = " + msg2);
+
 
 		print("Something happened at picking sides");
 

@@ -38,11 +38,6 @@ public class Spawning : MonoBehaviour {
 		for (int i = 1; i <= 4; i++) {
 			randSides.Add (i);
 		}
-		string msg1 = "Randsides original List = ";
-		for (int i = 0; i < randSides.Count; i+= 1){
-			msg1 = msg1 + randSides[i] + ", ";
-		}
-		print ("Randsides original List = " + msg1);
 
 		// tempIndex cannot be called twice in a row after removal
 		/// This is to factor in the corner case that if tempIndex hits 3
@@ -50,17 +45,9 @@ public class Spawning : MonoBehaviour {
 		/// Plus creates predictability in the game itself (can change it accordingly)
 		int tempIndex = Random.Range(0, randSides.Count);
 		int randSide1 = randSides[tempIndex];
-		print("Chosen randside1 = " + randSide1);
-		randSides.Remove (tempIndex); 
-
-		string msg2 = "After removal Randsides: ";
-		for (int i = 0; i < randSides.Count; i+= 1){
-			msg2 = msg2 + randSides[i] + ", ";
-		}
-		print ("Randsides original List = " + msg2);
+		randSides.RemoveAt (tempIndex); 
 
 		int randSide2 = randSides[Random.Range(0, randSides.Count)];
-		print("Chosen randside2 = " + randSide2);
 
 		chosenSpawnSide1 = pickingSides (randSide1);
 		chosenSpawnSide2 = pickingSides (randSide2);
