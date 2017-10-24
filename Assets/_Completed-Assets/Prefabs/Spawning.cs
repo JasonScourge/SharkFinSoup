@@ -8,7 +8,7 @@ public class Spawning : MonoBehaviour {
 	public GameObject[] btmSide;
 	public GameObject[] leftSide;
 	public GameObject[] rightSide;
-	
+
 	/// The values of these are overwritten in the engine editor
 	/// So if possible, change the values in the engine editor menu itself
 	public int minNumOfSharks = 2;
@@ -45,8 +45,10 @@ public class Spawning : MonoBehaviour {
 		/// Plus creates predictability in the game itself (can change it accordingly)
 		int tempIndex = Random.Range(0, randSides.Count);
 		int randSide1 = randSides[tempIndex];
+		print("Chosen randside1 = " + randSide1);
 		randSides.Remove (tempIndex); 
 		int randSide2 = randSides[Random.Range(0, randSides.Count)];
+		print("Chosen randside2 = " + randSide2);
 
 		chosenSpawnSide1 = pickingSides (randSide1);
 		chosenSpawnSide2 = pickingSides (randSide2);
@@ -64,9 +66,11 @@ public class Spawning : MonoBehaviour {
 		initList(trackSpawnPoints2, chosenSpawnSide2);
 
 		spawningSharks(numOfSharks1, trackSpawnPoints1, randSide1, chosenSpawnSide1);
+		print("Spawned sharks at " + randSide1);
 		spawningSharks(numOfSharks2, trackSpawnPoints2, randSide2, chosenSpawnSide2);
+		print("Spawned sharks at " + randSide2);
 	}
-	
+
 	void spawningSharks(int numOfSharks, List<int> trackSpawnPoints, int randSide, GameObject[] chosenSpawnSide){
 		// Randomising spawn points of the sharks
 		for (int i = 0; i < numOfSharks; i++){
@@ -77,11 +81,11 @@ public class Spawning : MonoBehaviour {
 			// Creating the object and the chosen spawn point 
 			Vector2 chosenSpawnPoint = chosenSpawnSide[rand].transform.position;
 			GameObject item = Instantiate (shark, chosenSpawnPoint, Quaternion.identity);
-			
+
 			// Changing the speed and direction of the objects moving
 			float plusSpeed = item.GetComponent<MoveIt>().getSpeed() + increaseSpeedAmount;
 			item.GetComponent<MoveIt> ().setSpeed(plusSpeed);
-			
+
 			// Determine which direction to move in 
 			/// 1 - top side, 2 - btm side, 3 - left side, 4 - right side
 			/// Default increase in speed is 10 ms
@@ -117,7 +121,7 @@ public class Spawning : MonoBehaviour {
 	}
 
 	GameObject[] pickingSides(int side){
-		GameObject[] chosenSpawnSide;
+		GameObject[] chosenSpawnSide = topSide;
 		switch (side) {
 			case 1:
 				chosenSpawnSide = topSide;
@@ -136,7 +140,8 @@ public class Spawning : MonoBehaviour {
 				break;
 
 			default:
-				chosenSpawnSide = topSide;
+				chosenSpawnSide = null;
+				print("Something happened at picking sides");
 				break;
 		}
 
