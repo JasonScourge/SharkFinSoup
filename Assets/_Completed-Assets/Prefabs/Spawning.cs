@@ -20,16 +20,16 @@ public class Spawning : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("spawnRocks", start, interval);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		InvokeRepeating ("spawningSharks", start, interval);
 	}
 
-	void spawnRocks(){
-		
+	// Update is called once per frame
+	void Update () {
+
+	}
+
+	void spawningSharks(){
+
 		// Randomly selecting which side the Sharks will spawn from 
 		/// The sharks are guranteed to be spawn from 2 different sides 
 		List<int> randSides = new List<int>();
@@ -57,11 +57,58 @@ public class Spawning : MonoBehaviour {
 		// Creating and tracking spawn points
 		List<int> trackSpawnPoints1 = new List<int>();
 		List<int> trackSpawnPoints2 = new List<int>();
-		
+
+		initList(trackSpawnPoints1, chosenSpawnSide1);
+		initList(trackSpawnPoints2, chosenSpawnSide2);
+
+		spawningSharks(numOfSharks1, trackSpawnPoints1, randSide1);
+		spawningSharks(numOfSharks2, trackSpawnPoints2, randSide2);
 	}
 	
+	void spawningSharks(int numOfSharks, List<int> trackSpawnPoints, int randSide){
+		// Randomising spawn points of the sharks
+		for (int i = 0; i < numOfSharks; i++){
+			int indexRand = Random.Range(0, trackSpawnPoints.Count - 1);
+			int rand = trackSpawnPoints[indexRand];
+			trackSpawnPoints.RemoveAt (indexRand);
+
+			// Creating the object and the chosen spawn point 
+			Vector2 chosenSpawnPoint = chosenSpawnSide[rand].transform.position;
+			GameObject item = Instantiate (shark, chosenSpawnPoint, Quaternion.identity);
+			
+			// Changing the speed and direction of the objects moving
+			float plusSpeed = item.GetComponent<MoveIt> ().speed + increaseSpeedAmount;
+			item.GetComponent<MoveIt> ().setSpeed(plusSpeed);
+			
+			// Determine which direction to move in 
+			/* 1 - top side, 2 - btm side, 3 - left side, 4 - right side */
+			Vector2 chosenDirection = new Vector2 (plusSpeed, plusSpeed);
+			switch (randSide) {
+
+				case 1:
+					chosenDirection = new Vector2 (0, -plusSpeed);
+					break;
+
+				case 2:
+					chosenDirection = new Vector2 (0, plusSpeed);
+					break;
+
+				case 3:
+					chosenDirection = new Vector2(plusSpeed, 0);
+					break;
+
+				case 4:
+					chosenDirection = new Vector2(-plusSpeed, 0);
+					break;
+
+			}
+
+			item.GetComponent<MoveIt>().setDirection (chosenDirection);
+		}
+	}
+
 	void initList( List<int> listSpawn, GameObject[] chosenSpawnSide){
-		for (int i = 0; i < chosenSpawnSide; i ++){
+		for (int i = 0; i < chosenSpawnSide.Length; i ++){
 			listSpawn.Add(i);
 		}
 	}
@@ -69,25 +116,25 @@ public class Spawning : MonoBehaviour {
 	GameObject[] pickingSides(int side){
 		GameObject[] chosenSpawnSide;
 		switch (side) {
-		case 1:
-			chosenSpawnSide = topSide;
-			break;
+			case 1:
+				chosenSpawnSide = topSide;
+				break;
 
-		case 2:
-			chosenSpawnSide = btmSide;
-			break;
+			case 2:
+				chosenSpawnSide = btmSide;
+				break;
 
-		case 3:
-			chosenSpawnSide = leftSide;
-			break;
+			case 3:
+				chosenSpawnSide = leftSide;
+				break;
 
-		case 4:
-			chosenSpawnSide = rightSide;
-			break;
+			case 4:
+				chosenSpawnSide = rightSide;
+				break;
 
-		default:
-			chosenSpawnSide = topSide;
-			break;
+			default:
+				chosenSpawnSide = topSide;
+				break;
 		}
 
 		return chosenSpawnSide;
