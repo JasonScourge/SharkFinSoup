@@ -9,7 +9,8 @@ public class Spawning : MonoBehaviour {
 	public GameObject[] leftSide;
 	public GameObject[] rightSide;
 	
-	
+	/// The values of these are overwritten in the engine editor
+	/// So if possible, change the values in the engine editor menu itself
 	public int minNumOfSharks = 2;
 	public int maxNumOfSharks = 4;
 	public int start = 2;
