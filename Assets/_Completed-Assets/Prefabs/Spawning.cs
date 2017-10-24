@@ -43,10 +43,10 @@ public class Spawning : MonoBehaviour {
 		/// This is to factor in the corner case that if tempIndex hits 3
 		/// This may cause an array out of bound error
 		/// Plus creates predictability in the game itself (can change it accordingly)
-		int tempIndex = Random.Range(0, randSides.Count - 1);
+		int tempIndex = Random.Range(0, randSides.Count);
 		int randSide1 = randSides[tempIndex];
 		randSides.Remove (tempIndex); 
-		int randSide2 = randSides[Random.Range(0, randSides.Count - 1)];
+		int randSide2 = randSides[Random.Range(0, randSides.Count)];
 
 		chosenSpawnSide1 = pickingSides (randSide1);
 		chosenSpawnSide2 = pickingSides (randSide2);
@@ -70,7 +70,7 @@ public class Spawning : MonoBehaviour {
 	void spawningSharks(int numOfSharks, List<int> trackSpawnPoints, int randSide, GameObject[] chosenSpawnSide){
 		// Randomising spawn points of the sharks
 		for (int i = 0; i < numOfSharks; i++){
-			int indexRand = Random.Range(0, trackSpawnPoints.Count - 1);
+			int indexRand = Random.Range(0, trackSpawnPoints.Count);
 			int rand = trackSpawnPoints[indexRand];
 			trackSpawnPoints.RemoveAt (indexRand);
 
@@ -79,7 +79,7 @@ public class Spawning : MonoBehaviour {
 			GameObject item = Instantiate (shark, chosenSpawnPoint, Quaternion.identity);
 			
 			// Changing the speed and direction of the objects moving
-			float plusSpeed = item.GetComponent<MoveIt> ().speed + increaseSpeedAmount;
+			float plusSpeed = item.GetComponent<MoveIt>().getSpeed() + increaseSpeedAmount;
 			item.GetComponent<MoveIt> ().setSpeed(plusSpeed);
 			
 			// Determine which direction to move in 
