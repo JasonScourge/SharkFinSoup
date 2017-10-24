@@ -39,10 +39,10 @@ public class Spawning : MonoBehaviour {
 			randSides.Add (i);
 		}
 		string msg1 = "Randsides original List = ";
-		print ("Randsides original List = ");
 		for (int i = 0; i < randSides.Count; i+= 1){
-			print (i + ", ");
+			msg1 = msg1 + randSides[i] + ", ";
 		}
+		print ("Randsides original List = " + msg1);
 
 		// tempIndex cannot be called twice in a row after removal
 		/// This is to factor in the corner case that if tempIndex hits 3
@@ -52,10 +52,13 @@ public class Spawning : MonoBehaviour {
 		int randSide1 = randSides[tempIndex];
 		print("Chosen randside1 = " + randSide1);
 		randSides.Remove (tempIndex); 
-		print ("After removal Randsides: ");
+
+		string msg2 = "After removal Randsides: ";
 		for (int i = 0; i < randSides.Count; i+= 1){
-			print (i + ", ");
+			msg2 = msg2 + randSides[i] + ", ";
 		}
+		print ("Randsides original List = " + msg2);
+
 		int randSide2 = randSides[Random.Range(0, randSides.Count)];
 		print("Chosen randside2 = " + randSide2);
 
@@ -75,9 +78,7 @@ public class Spawning : MonoBehaviour {
 		initList(trackSpawnPoints2, chosenSpawnSide2);
 
 		spawningSharks(numOfSharks1, trackSpawnPoints1, randSide1, chosenSpawnSide1);
-		print("Spawned sharks at " + randSide1);
 		spawningSharks(numOfSharks2, trackSpawnPoints2, randSide2, chosenSpawnSide2);
-		print("Spawned sharks at " + randSide2);
 	}
 
 	void spawningSharks(int numOfSharks, List<int> trackSpawnPoints, int randSide, GameObject[] chosenSpawnSide){
