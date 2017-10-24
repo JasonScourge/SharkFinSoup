@@ -38,6 +38,10 @@ public class Spawning : MonoBehaviour {
 		for (int i = 1; i <= 4; i++) {
 			randSides.Add (i);
 		}
+		print ("Randsides original List = ");
+		for (int i = 0; i < randSides.Count; i+= 1){
+			print (i + ", ");
+		}
 
 		// tempIndex cannot be called twice in a row after removal
 		/// This is to factor in the corner case that if tempIndex hits 3
@@ -47,6 +51,10 @@ public class Spawning : MonoBehaviour {
 		int randSide1 = randSides[tempIndex];
 		print("Chosen randside1 = " + randSide1);
 		randSides.Remove (tempIndex); 
+		print ("After removal Randsides: ");
+		for (int i = 0; i < randSides.Count; i+= 1){
+			print (i + ", ");
+		}
 		int randSide2 = randSides[Random.Range(0, randSides.Count)];
 		print("Chosen randside2 = " + randSide2);
 
