@@ -38,6 +38,7 @@ public class Spawning : MonoBehaviour {
 		for (int i = 1; i <= 4; i++) {
 			randSides.Add (i);
 		}
+		string msg1 = "Randsides original List = ";
 		print ("Randsides original List = ");
 		for (int i = 0; i < randSides.Count; i+= 1){
 			print (i + ", ");
