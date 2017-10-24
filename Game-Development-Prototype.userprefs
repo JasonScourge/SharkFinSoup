@@ -2,8 +2,31 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Completed-Assets\Prefabs\Spawning.cs">
     <Files>
-      <File FileName="Assets\_Completed-Assets\Prefabs\Spawning.cs" Line="42" Column="32" />
+      <File FileName="Assets\_Completed-Assets\Prefabs\Spawning.cs" Line="87" Column="88" />
+      <File FileName="Assets\_Completed-Assets\Prefabs\PrintDebug.cs" Line="11" Column="3" />
+      <File FileName="Assets\_Completed-Assets\Prefabs\MoveIt.cs" Line="9" Column="26" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Game-Development-Prototype" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="_Completed-Assets" expanded="True">
+                <Node name="Prefabs" expanded="True">
+                  <Node name="Spawning.cs" selected="True" />
+                </Node>
+                <Node name="Scripts" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="Game-Development-Prototype" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

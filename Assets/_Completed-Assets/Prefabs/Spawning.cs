@@ -84,7 +84,7 @@ public class Spawning : MonoBehaviour {
 			GameObject item = Instantiate (shark, chosenSpawnPoint, Quaternion.identity);
 
 			// Changing the speed and direction of the objects moving
-			float plusSpeed = speedTrackerMultiplier * item.GetComponent<MoveIt>().getSpeed() + increaseSpeedAmount;
+			float plusSpeed = item.GetComponent<MoveIt>().getSpeed() + speedTrackerMultiplier * increaseSpeedAmount;
 			item.GetComponent<MoveIt> ().setSpeed(plusSpeed);
 
 			// Determine which direction to move in 
