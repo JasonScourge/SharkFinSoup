@@ -19,6 +19,7 @@ public class Spawning : MonoBehaviour {
 
 	private GameObject[] chosenSpawnSide1;
 	private GameObject[] chosenSpawnSide2;
+	private float speedTrackerMultiplier = 1.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -66,6 +67,9 @@ public class Spawning : MonoBehaviour {
 
 		spawningSharks(numOfSharks1, trackSpawnPoints1, randSide1, chosenSpawnSide1);
 		spawningSharks(numOfSharks2, trackSpawnPoints2, randSide2, chosenSpawnSide2);
+
+		// Keeping track and increasing the speed track multiplier
+		speedTrackerMultiplier += 1.0f;
 	}
 
 	void spawningSharks(int numOfSharks, List<int> trackSpawnPoints, int randSide, GameObject[] chosenSpawnSide){
@@ -80,7 +84,7 @@ public class Spawning : MonoBehaviour {
 			GameObject item = Instantiate (shark, chosenSpawnPoint, Quaternion.identity);
 
 			// Changing the speed and direction of the objects moving
-			float plusSpeed = item.GetComponent<MoveIt>().getSpeed() + increaseSpeedAmount;
+			float plusSpeed = speedTrackerMultiplier * item.GetComponent<MoveIt>().getSpeed() + increaseSpeedAmount;
 			item.GetComponent<MoveIt> ().setSpeed(plusSpeed);
 
 			// Determine which direction to move in 
@@ -88,7 +92,6 @@ public class Spawning : MonoBehaviour {
 			/// Default increase in speed is 10 ms
 			Vector2 chosenDirection = new Vector2 (plusSpeed, plusSpeed);
 			switch (randSide) {
-
 				case 1:
 					chosenDirection = new Vector2 (0, -plusSpeed);
 					break;
@@ -104,7 +107,6 @@ public class Spawning : MonoBehaviour {
 				case 4:
 					chosenDirection = new Vector2(-plusSpeed, 0);
 					break;
-
 			}
 
 			item.GetComponent<MoveIt>().setDirection (chosenDirection);
