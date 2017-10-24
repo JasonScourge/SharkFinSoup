@@ -8,11 +8,12 @@ public class Spawning : MonoBehaviour {
 	public GameObject[] btmSide;
 	public GameObject[] leftSide;
 	public GameObject[] rightSide;
+	
+	
 	public int minNumOfSharks = 2;
 	public int maxNumOfSharks = 4;
-	public int start;
-	public int interval;
-
+	public int start = 2;
+	public int interval = 5;
 	public float increaseSpeedAmount = 10.0f;
 
 	private GameObject[] chosenSpawnSide1;
@@ -61,11 +62,11 @@ public class Spawning : MonoBehaviour {
 		initList(trackSpawnPoints1, chosenSpawnSide1);
 		initList(trackSpawnPoints2, chosenSpawnSide2);
 
-		spawningSharks(numOfSharks1, trackSpawnPoints1, randSide1);
-		spawningSharks(numOfSharks2, trackSpawnPoints2, randSide2);
+		spawningSharks(numOfSharks1, trackSpawnPoints1, randSide1, chosenSpawnSide1);
+		spawningSharks(numOfSharks2, trackSpawnPoints2, randSide2, chosenSpawnSide2);
 	}
 	
-	void spawningSharks(int numOfSharks, List<int> trackSpawnPoints, int randSide){
+	void spawningSharks(int numOfSharks, List<int> trackSpawnPoints, int randSide, GameObject[] chosenSpawnSide){
 		// Randomising spawn points of the sharks
 		for (int i = 0; i < numOfSharks; i++){
 			int indexRand = Random.Range(0, trackSpawnPoints.Count - 1);
@@ -81,7 +82,8 @@ public class Spawning : MonoBehaviour {
 			item.GetComponent<MoveIt> ().setSpeed(plusSpeed);
 			
 			// Determine which direction to move in 
-			/* 1 - top side, 2 - btm side, 3 - left side, 4 - right side */
+			/// 1 - top side, 2 - btm side, 3 - left side, 4 - right side
+			/// Default increase in speed is 10 ms
 			Vector2 chosenDirection = new Vector2 (plusSpeed, plusSpeed);
 			switch (randSide) {
 
