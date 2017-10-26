@@ -89,16 +89,23 @@ public class Spawning : MonoBehaviour {
 			item.GetComponent<MoveIt> ().setSpeed(plusSpeed);
 
 			// Determine which direction the shark should move in 
+			/// Do understand and brush up your concepts on some physics and matrix manipulation 
+			/// Modifying the y axis flips the thing (by 180 degrees)
+			/// Modifying the z axis rotates the thing 
+			/// Do not modify the x-axis
+			/// Visualise where you are rotating in 3D space before applying any changes
 			Vector2 chosenDirection = new Vector2 (plusSpeed, plusSpeed);
 			switch (randSide) {
 				case 1:	// top side
-					//item.transform.Rotate(Vector3.right);
+					item.transform.Rotate(new Vector3(0.0f, 0.0f, 90.0f));
 					chosenDirection = new Vector2 (0, -plusSpeed);
+					print("TOP");
 					break;
 
 				case 2:	// btm side
-					item.transform.Rotate(new Vector3(0.0f, 0.0f, 1.0f));
+					item.transform.Rotate(new Vector3(0.0f, 0.0f, -90.0f));
 					chosenDirection = new Vector2 (0, plusSpeed);
+					print("BTM");
 					break;
 
 				case 3:	// left side
@@ -107,7 +114,7 @@ public class Spawning : MonoBehaviour {
 					break;
 
 				case 4:	// right side
-					item.transform.Rotate(new Vector3(0.0f, 180.0f, 1.0f));
+					item.transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
 					chosenDirection = new Vector2(plusSpeed, 0);
 					break;
 			}
