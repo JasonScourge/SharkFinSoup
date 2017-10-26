@@ -84,27 +84,29 @@ public class Spawning : MonoBehaviour {
 			GameObject item = Instantiate (shark, chosenSpawnPoint, Quaternion.identity);
 
 			// Changing the speed and direction of the objects moving
+			/// Default increase in speed is 10 ms
 			float plusSpeed = item.GetComponent<MoveIt>().getSpeed() + speedTrackerMultiplier * increaseSpeedAmount;
 			item.GetComponent<MoveIt> ().setSpeed(plusSpeed);
 
-			// Determine which direction to move in 
-			/// 1 - top side, 2 - btm side, 3 - left side, 4 - right side
-			/// Default increase in speed is 10 ms
+			// Determine which direction the shark should move in 
 			Vector2 chosenDirection = new Vector2 (plusSpeed, plusSpeed);
 			switch (randSide) {
-				case 1:
+				case 1:	// top side
+					//item.transform.Rotate(Vector3.right);
 					chosenDirection = new Vector2 (0, -plusSpeed);
 					break;
 
-				case 2:
+				case 2:	// btm side
+					//item.transform.Rotate(Vector3.left);
 					chosenDirection = new Vector2 (0, plusSpeed);
 					break;
 
-				case 3:
+				case 3:	// left side
 					chosenDirection = new Vector2(plusSpeed, 0);
 					break;
 
-				case 4:
+				case 4:	// right side
+					item.transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
 					chosenDirection = new Vector2(-plusSpeed, 0);
 					break;
 			}
@@ -113,28 +115,30 @@ public class Spawning : MonoBehaviour {
 		}
 	}
 
+	// Creates the list of spawns to be randomised
 	void initList( List<int> listSpawn, GameObject[] chosenSpawnSide){
 		for (int i = 0; i < chosenSpawnSide.Length; i ++){
 			listSpawn.Add(i);
 		}
 	}
 
+	// Deciding which side based on the number
 	GameObject[] pickingSides(int side){
 		GameObject[] chosenSpawnSide = topSide;
 		switch (side) {
-			case 1:
+			case 1:	// top side
 				chosenSpawnSide = topSide;
 				break;
 
-			case 2:
+			case 2:	// btm side
 				chosenSpawnSide = btmSide;
 				break;
 
-			case 3:
+			case 3:	// left side
 				chosenSpawnSide = leftSide;
 				break;
 
-			case 4:
+			case 4:	// right side
 				chosenSpawnSide = rightSide;
 				break;
 

@@ -6,7 +6,7 @@ public class DestroyOvertime : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Destroy (this.gameObject, 10.0f);
+		Destroy (this.gameObject, 15.0f);
 	}
 	
 	// Update is called once per frame
