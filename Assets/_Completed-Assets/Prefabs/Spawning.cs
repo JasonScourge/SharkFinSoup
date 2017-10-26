@@ -107,7 +107,7 @@ public class Spawning : MonoBehaviour {
 
 				case 4:	// right side
 					item.transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
-					chosenDirection = new Vector2(-plusSpeed, 0);
+					chosenDirection = new Vector2(plusSpeed, 0);
 					break;
 			}
 
