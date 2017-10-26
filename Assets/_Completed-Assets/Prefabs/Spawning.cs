@@ -97,16 +97,17 @@ public class Spawning : MonoBehaviour {
 					break;
 
 				case 2:	// btm side
-					//item.transform.Rotate(Vector3.left);
+					item.transform.Rotate(new Vector3(0.0f, 0.0f, 1.0f));
 					chosenDirection = new Vector2 (0, plusSpeed);
 					break;
 
 				case 3:	// left side
+					// Sharks face to right right from the left by default
 					chosenDirection = new Vector2(plusSpeed, 0);
 					break;
 
 				case 4:	// right side
-					item.transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
+					item.transform.Rotate(new Vector3(0.0f, 180.0f, 1.0f));
 					chosenDirection = new Vector2(plusSpeed, 0);
 					break;
 			}
