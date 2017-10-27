@@ -85,7 +85,8 @@ public class Spawning : MonoBehaviour {
 
 			// Changing the speed and direction of the objects moving
 			/// Default increase in speed is 10 ms
-			float plusSpeed = item.GetComponent<MoveIt>().getSpeed() + speedTrackerMultiplier * increaseSpeedAmount;
+			float plusSpeed = item.GetComponent<MoveIt>().getSpeed() + increaseSpeedAmount;
+			//float plusSpeed = item.GetComponent<MoveIt>().getSpeed() + speedTrackerMultiplier * increaseSpeedAmount;
 			item.GetComponent<MoveIt> ().setSpeed(plusSpeed);
 
 			// Determine which direction the shark should move in 

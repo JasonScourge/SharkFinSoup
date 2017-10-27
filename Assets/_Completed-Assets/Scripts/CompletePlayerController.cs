@@ -76,8 +76,10 @@ public class CompletePlayerController : MonoBehaviour {
 			}
 				
 			gameObject.SetActive(false);
-			//Time.timeScale = 0;
 			Invoke ("endGame", 4);
+
+			/// This one is to stop the time
+			//Time.timeScale = 0;
 		}
 	}
 
