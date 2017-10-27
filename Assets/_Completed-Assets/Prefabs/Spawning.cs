@@ -40,7 +40,7 @@ public class Spawning : MonoBehaviour {
 			randSides.Add (i);
 		}
 
-		// tempIndex cannot be called twice in a row after removal
+		/// tempIndex cannot be called twice in a row after removal
 		/// This is to factor in the corner case that if tempIndex hits 3
 		/// This may cause an array out of bound error
 		/// Plus creates predictability in the game itself (can change it accordingly)
@@ -54,7 +54,7 @@ public class Spawning : MonoBehaviour {
 		chosenSpawnSide2 = pickingSides (randSide2);
 
 		// Randomising the number of sharks, default is from 2 to 4
-		/* Built-in error prevention to prevent index out of bound error if the values of sharks more than array length */
+		/// Built-in error prevention to prevent index out of bound error if the values of sharks more than array length
 		int numOfSharks1 = Mathf.Min(Random.Range(minNumOfSharks, maxNumOfSharks), chosenSpawnSide1.Length);
 		int numOfSharks2 = Mathf.Min(Random.Range(minNumOfSharks, maxNumOfSharks), chosenSpawnSide2.Length);
 
@@ -100,13 +100,11 @@ public class Spawning : MonoBehaviour {
 				case 1:	// top side
 					item.transform.Rotate(new Vector3(0.0f, 0.0f, -90.0f));
 					chosenDirection = new Vector2 (plusSpeed, 0);
-					print("TOP");
 					break;
 
 				case 2:	// btm side
 					item.transform.Rotate(new Vector3(0.0f, 0.0f, 90.0f));
 					chosenDirection = new Vector2 (plusSpeed, 0);
-					print("BTM");
 					break;
 
 				case 3:	// left side

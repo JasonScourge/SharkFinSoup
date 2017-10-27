@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 //Adding this allows us to access members of the UI namespace including Text.
 using UnityEngine.UI;
@@ -31,8 +32,6 @@ public class CompletePlayerController : MonoBehaviour {
 		//Initialze winText to a blank string since we haven't won yet at beginning.
 		loseText.text = " ";
 
-		//Call our SetCountText function which will update the text with the current value for count.
-		SetCountText ();
 	}
 
 	//FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
@@ -48,17 +47,14 @@ public class CompletePlayerController : MonoBehaviour {
 		float currentTime = Time.deltaTime;
 
 		//Use the two store floats to create a new Vector2 variable movement.
-		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
+		Vector2 movement = new Vector2 (speed * moveHorizontal, speed * moveVertical);
 
 		if (hasLost) {
 			// Preventing the object to move any further.
 			speed = 0;
-
-			// Removing all current velocity from the object.
-			rb2d.velocity = Vector2.zero; 
 		} else {
-			//Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
-			rb2d.AddForce (movement * speed);
+			// Using transform.translate to create player movement
+			transform.Translate (movement * Time.deltaTime);
 		}
 	}
 
@@ -71,9 +67,6 @@ public class CompletePlayerController : MonoBehaviour {
 
 			//Add one to the current value of our count variable.
 			count = count - 1;
-			
-			//Update the currently displayed count by calling the SetCountText function.
-			SetCountText ();
 
 			if (count <= 0) {
 				hasLost = true; 
@@ -84,15 +77,13 @@ public class CompletePlayerController : MonoBehaviour {
 			}
 				
 			gameObject.SetActive(false);
-			Time.timeScale = 0;
+			//Time.timeScale = 0;
+			Invoke ("endGame", 4);
 		}
-		
-
 	}
 
-	//This function updates the text displaying the number of objects we've collected and displays our victory message if we've collected all of them.
-	void SetCountText()
-	{
-		countText.text = "Life: " + count.ToString ();
+	void endGame() {
+		SceneManager.LoadScene (0);
 	}
+
 }
