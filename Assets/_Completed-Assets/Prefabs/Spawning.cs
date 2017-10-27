@@ -15,7 +15,7 @@ public class Spawning : MonoBehaviour {
 	public int maxNumOfSharks = 4;
 	public int start = 2;
 	public int interval = 5;
-	public float increaseSpeedAmount = 10.0f;
+	public float increaseSpeedAmount = 1.0f;
 
 	private GameObject[] chosenSpawnSide1;
 	private GameObject[] chosenSpawnSide2;
@@ -25,10 +25,11 @@ public class Spawning : MonoBehaviour {
 	void Start () {
 		InvokeRepeating ("spawningSharks", start, interval);
 	}
-
-	// Update is called once per frame
-	void Update () {
-
+		
+	// FixedUpdate is called at a fixed interval and is independent of frame rate.
+	void FixedUpdate () {
+		Time.timeScale = 1.0f + speedTrackerMultiplier/25;
+		Debug.Log (Time.timeScale);
 	}
 
 	void spawningSharks(){
@@ -98,14 +99,14 @@ public class Spawning : MonoBehaviour {
 			/// Do remember than transforming the shark requires a change in the chosenDirection
 			Vector2 chosenDirection = new Vector2 (plusSpeed, plusSpeed);
 			switch (randSide) {
-				case 1:	// top side
-					item.transform.Rotate(new Vector3(0.0f, 0.0f, -90.0f));
-					chosenDirection = new Vector2 (plusSpeed, 0);
+				case 1:	// left side
+					// Sharks face to right right from the left by default
+					chosenDirection = new Vector2(plusSpeed, 0);
 					break;
 
-				case 2:	// btm side
-					item.transform.Rotate(new Vector3(0.0f, 0.0f, 90.0f));
-					chosenDirection = new Vector2 (plusSpeed, 0);
+				case 2:	// right side
+					item.transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
+					chosenDirection = new Vector2(plusSpeed, 0);
 					break;
 
 				case 3:	// left side
@@ -134,12 +135,12 @@ public class Spawning : MonoBehaviour {
 	GameObject[] pickingSides(int side){
 		GameObject[] chosenSpawnSide = topSide;
 		switch (side) {
-			case 1:	// top side
-				chosenSpawnSide = topSide;
+			case 1:	// left side
+				chosenSpawnSide = leftSide;
 				break;
 
-			case 2:	// btm side
-				chosenSpawnSide = btmSide;
+			case 2:	// right side
+				chosenSpawnSide = rightSide;
 				break;
 
 			case 3:	// left side

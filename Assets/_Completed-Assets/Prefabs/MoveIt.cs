@@ -12,9 +12,9 @@ public class MoveIt : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		// Moves from top to down
