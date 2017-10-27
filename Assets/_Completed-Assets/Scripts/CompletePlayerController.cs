@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 public class CompletePlayerController : MonoBehaviour {
 
-	public float speed;				//Floating point variable to store the player's movement speed.
-	public float maxSpeed = 25; 	//Maximun Speed the player can float at all time
+	public float playerSpeed;		//Floating point variable to store the player's movement speed.
 	public Text countText;			//Store a reference to the UI Text component which will display the number of pickups collected.
 	public Text loseText;			//Store a reference to the UI Text component which will display the 'You win' message.
 
@@ -47,11 +46,11 @@ public class CompletePlayerController : MonoBehaviour {
 		float currentTime = Time.deltaTime;
 
 		//Use the two store floats to create a new Vector2 variable movement.
-		Vector2 movement = new Vector2 (speed * moveHorizontal, speed * moveVertical);
+		Vector2 movement = new Vector2 (playerSpeed * moveHorizontal, playerSpeed * moveVertical);
 
 		if (hasLost) {
 			// Preventing the object to move any further.
-			speed = 0;
+			playerSpeed = 0;
 		} else {
 			// Using transform.translate to create player movement
 			transform.Translate (movement * Time.deltaTime);
