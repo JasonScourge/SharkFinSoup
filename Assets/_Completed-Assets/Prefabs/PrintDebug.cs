@@ -70,15 +70,17 @@ public class PrintDebug : MonoBehaviour {
 		   break;
 
 		   case 3:	// left side
-		// Sharks face to right right from the left by default
-		chosenDirection = new Vector2(plusSpeed, 0);
-		break;
+			// Sharks face to right right from the left by default
+			chosenDirection = new Vector2(plusSpeed, 0);
+			break;
 
-		case 4:	// right side
-		item.transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
-		chosenDirection = new Vector2(plusSpeed, 0);
-		break;
-		}
+			case 4:	// right side
+			item.transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
+			chosenDirection = new Vector2(plusSpeed, 0);
+			break;
+			}
+
+			Debug.Log (Time.timeScale);
 
 	*/
 	}

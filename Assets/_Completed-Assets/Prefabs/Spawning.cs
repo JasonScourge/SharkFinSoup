@@ -29,7 +29,7 @@ public class Spawning : MonoBehaviour {
 	// FixedUpdate is called at a fixed interval and is independent of frame rate.
 	void FixedUpdate () {
 		Time.timeScale = 1.0f + speedTrackerMultiplier/25;
-		Debug.Log (Time.timeScale);
+
 	}
 
 	void spawningSharks(){
@@ -101,7 +101,7 @@ public class Spawning : MonoBehaviour {
 			switch (randSide) {
 				case 1:	// left side
 					// Sharks face to right right from the left by default
-					chosenDirection = new Vector2(plusSpeed, 0);
+					chosenDirection = new Vector2(plusSpeed, 0); 	
 					break;
 
 				case 2:	// right side
