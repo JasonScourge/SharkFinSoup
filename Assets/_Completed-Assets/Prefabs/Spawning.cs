@@ -11,10 +11,10 @@ public class Spawning : MonoBehaviour {
 
 	/// The values of these are overwritten in the engine editor
 	/// So if possible, change the values in the engine editor menu itself
-	public int minNumOfSharks = 2;
-	public int maxNumOfSharks = 4;
-	public int start = 2;
-	public int interval = 5;
+	public int minNumOfSharks;
+	public int maxNumOfSharks;
+	public int start;
+	public int interval;
 	public float increaseSpeedAmount = 1.0f;
 
 	private GameObject[] chosenSpawnSide1;
