@@ -1,33 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Completed-Assets\Prefabs\MoveIt.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Completed-Assets\Scripts\CompletePlayerController.cs">
     <Files>
-      <File FileName="Assets\_Completed-Assets\Prefabs\MoveIt.cs" Line="26" Column="3" />
+      <File FileName="Assets\_Completed-Assets\Prefabs\MoveIt.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Completed-Assets\Scripts\CompletePlayerController.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Game-Development-Prototype" expanded="True">
-            <Node name="Assembly-CSharp" expanded="True">
-              <Node name="_Completed-Assets" expanded="True">
-                <Node name="Prefabs" expanded="True">
-                  <Node name="MoveIt.cs" selected="True" />
-                </Node>
-                <Node name="Scripts" expanded="True" />
-              </Node>
-              <Node name="TutorialInfo" expanded="True">
-                <Node name="Scripts" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State name="__root__">
-          <Node name="Game-Development-Prototype" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
