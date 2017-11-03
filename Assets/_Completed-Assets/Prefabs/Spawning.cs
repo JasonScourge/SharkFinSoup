@@ -15,8 +15,10 @@ public class Spawning : MonoBehaviour {
 	public int maxNumOfSharks;
 	public int start;
 	public int interval;
+	public int intervalSwitch;
 	public float increaseSpeedAmount = 1.0f;
 
+	private int intervalTracker = 0;
 	private GameObject[] chosenSpawnSide1;
 	private GameObject[] chosenSpawnSide2;
 	private float speedTrackerMultiplier = 1.0f;
@@ -28,12 +30,11 @@ public class Spawning : MonoBehaviour {
 		
 	// FixedUpdate is called at a fixed interval and is independent of frame rate.
 	void FixedUpdate () {
-		Time.timeScale = 1.0f + speedTrackerMultiplier/25;
-
+		Time.timeScale = 1.0f + speedTrackerMultiplier/50;
+		print (Time.timeScale);
 	}
 
 	void spawningSharks(){
-
 		// Randomly selecting which side the Sharks will spawn from 
 		/// The sharks are guranteed to be spawn from 2 different sides 
 		int leftSide1 = 1;
@@ -57,7 +58,16 @@ public class Spawning : MonoBehaviour {
 		spawningSharks(numOfSharks2, trackSpawnPoints2, rightSide2, chosenSpawnSide2);
 
 		// Keeping track and increasing the speed track multiplier
+		/// Also keep track and changes interval of spawning at times
 		speedTrackerMultiplier += 1.0f;
+		if (intervalTracker > 2) {
+			int tempInterval = interval;
+			interval = intervalSwitch;
+			intervalSwitch = tempInterval;
+			intervalTracker = 0;
+		} else {
+			intervalTracker += 1;
+		}
 	}
 
 	void spawningSharks(int numOfSharks, List<int> trackSpawnPoints, int randSide, GameObject[] chosenSpawnSide){
@@ -120,7 +130,7 @@ public class Spawning : MonoBehaviour {
 
 	// Deciding which side based on the number
 	GameObject[] pickingSides(int side){
-		GameObject[] chosenSpawnSide = topSide;
+		GameObject[] chosenSpawnSide = leftSide;
 		switch (side) {
 			case 1:	// left side
 				chosenSpawnSide = leftSide;
