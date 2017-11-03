@@ -36,23 +36,10 @@ public class Spawning : MonoBehaviour {
 
 		// Randomly selecting which side the Sharks will spawn from 
 		/// The sharks are guranteed to be spawn from 2 different sides 
-		List<int> randSides = new List<int>();
-		for (int i = 1; i <= 4; i++) {
-			randSides.Add (i);
-		}
-
-		/// tempIndex cannot be called twice in a row after removal
-		/// This is to factor in the corner case that if tempIndex hits 3
-		/// This may cause an array out of bound error
-		/// Plus creates predictability in the game itself (can change it accordingly)
-		int tempIndex = Random.Range(0, randSides.Count);
-		int randSide1 = randSides[tempIndex];
-		randSides.RemoveAt (tempIndex); 
-
-		int randSide2 = randSides[Random.Range(0, randSides.Count)];
-
-		chosenSpawnSide1 = pickingSides (randSide1);
-		chosenSpawnSide2 = pickingSides (randSide2);
+		int leftSide1 = 0;
+		int rightSide2 = 1;
+		chosenSpawnSide1 = pickingSides (leftSide1);
+		chosenSpawnSide2 = pickingSides (rightSide2);
 
 		// Randomising the number of sharks, default is from 2 to 4
 		/// Built-in error prevention to prevent index out of bound error if the values of sharks more than array length
@@ -66,8 +53,8 @@ public class Spawning : MonoBehaviour {
 		initList(trackSpawnPoints1, chosenSpawnSide1);
 		initList(trackSpawnPoints2, chosenSpawnSide2);
 
-		spawningSharks(numOfSharks1, trackSpawnPoints1, randSide1, chosenSpawnSide1);
-		spawningSharks(numOfSharks2, trackSpawnPoints2, randSide2, chosenSpawnSide2);
+		spawningSharks(numOfSharks1, trackSpawnPoints1, leftSide1, chosenSpawnSide1);
+		spawningSharks(numOfSharks2, trackSpawnPoints2, rightSide2, chosenSpawnSide2);
 
 		// Keeping track and increasing the speed track multiplier
 		speedTrackerMultiplier += 1.0f;
