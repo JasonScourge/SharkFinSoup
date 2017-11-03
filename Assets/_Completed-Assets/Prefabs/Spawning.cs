@@ -36,8 +36,8 @@ public class Spawning : MonoBehaviour {
 
 		// Randomly selecting which side the Sharks will spawn from 
 		/// The sharks are guranteed to be spawn from 2 different sides 
-		int leftSide1 = 0;
-		int rightSide2 = 1;
+		int leftSide1 = 1;
+		int rightSide2 = 2;
 		chosenSpawnSide1 = pickingSides (leftSide1);
 		chosenSpawnSide2 = pickingSides (rightSide2);
 
