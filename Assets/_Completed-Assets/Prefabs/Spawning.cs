@@ -71,7 +71,6 @@ public class Spawning : MonoBehaviour {
 		}
 		print ("interval = " + interval);
 		*/
-		print (Time.timeScale);
 	}
 
 	void spawningSharks(int numOfSharks, List<int> trackSpawnPoints, int randSide, GameObject[] chosenSpawnSide){

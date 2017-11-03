@@ -59,6 +59,7 @@
      <Compile Include="Assets\_Completed-Assets\Scripts\DestroyOvertime.cs" />
      <Compile Include="Assets\_Completed-Assets\Scripts\LosingScene.cs" />
      <Compile Include="Assets\_Completed-Assets\Scripts\Menu.cs" />
+     <Compile Include="Assets\_Completed-Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\TutorialInfo.cs" />
      <None Include="Assets\TutorialInfo\Fonts\LICENSE.txt" />
  <Reference Include="UnityEngine.UI">

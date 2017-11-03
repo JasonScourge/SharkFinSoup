@@ -65,15 +65,8 @@ public class CompletePlayerController : MonoBehaviour {
 				hasLost = true; 
 			}
 				
-			if (hasLost) {
-
-			}
-				
 			gameObject.SetActive(false);
 			endGame ();
-
-			/// This one is to stop the time
-			//Time.timeScale = 0.001f;
 		}
 	}
 
