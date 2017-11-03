@@ -31,7 +31,6 @@ public class Spawning : MonoBehaviour {
 	// FixedUpdate is called at a fixed interval and is independent of frame rate.
 	void FixedUpdate () {
 		Time.timeScale = 1.0f + speedTrackerMultiplier/50;
-		print (Time.timeScale);
 	}
 
 	void spawningSharks(){
@@ -60,6 +59,8 @@ public class Spawning : MonoBehaviour {
 		// Keeping track and increasing the speed track multiplier
 		/// Also keep track and changes interval of spawning at times
 		speedTrackerMultiplier += 1.0f;
+		// Doesn't work, need to fix it later
+		/*
 		if (intervalTracker > 2) {
 			int tempInterval = interval;
 			interval = intervalSwitch;
@@ -68,6 +69,9 @@ public class Spawning : MonoBehaviour {
 		} else {
 			intervalTracker += 1;
 		}
+		print ("interval = " + interval);
+		*/
+		print (Time.timeScale);
 	}
 
 	void spawningSharks(int numOfSharks, List<int> trackSpawnPoints, int randSide, GameObject[] chosenSpawnSide){
