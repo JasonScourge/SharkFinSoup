@@ -16,6 +16,9 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 	public void Update (){
+		/// Be careful when using Input.GetKey, Input.GetKeyDown and Input.GetKeyUp
+		/// They mean very different things
+		/// Read the suggestions or documentations in detail before choosing which one to use
 		if (Input.GetKeyDown("p")) {
 			if (!isPaused) {
 				isPaused = true;
