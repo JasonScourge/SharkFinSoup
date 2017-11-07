@@ -40,11 +40,13 @@ public class PauseMenu : MonoBehaviour {
 		Time.timeScale = 0.00001f;
 		pauseMenu.SetActive (true);
 		pauseButton.SetActive (false);
+		isPaused = true;
 	}
 
 	public void resumeGame(){
 		Time.timeScale = StoredTime;
 		pauseMenu.SetActive (false);
 		pauseButton.SetActive (true);
+		isPaused = false;
 	}
 }
