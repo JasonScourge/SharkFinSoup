@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CompletePlayerController : MonoBehaviour {
-	public GameObject deathScreen;
+	public AudioSource deathSoundSource;
+	public AudioClip deathSound;
 	public float playerSpeed;		//Floating point variable to store the player's movement speed.
 
 	private Rigidbody2D rb2d;		//Store a reference to the Rigidbody2D component required to use 2D Physics.
@@ -65,6 +66,7 @@ public class CompletePlayerController : MonoBehaviour {
 			}
 				
 			if (hasLost) {
+				deathSoundSource.PlayOneShot (deathSound);
 				gameObject.SetActive (false);
 				endGame ();
 			}
