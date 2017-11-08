@@ -10,11 +10,10 @@ public class ResetTime : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		Time.timeScale = 1.0f;
-		//print ("Game transition into game over scene");
 	}
 
 	//FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
 	void FixedUpdate() {
-		//print (Time.timeScale);
+		
 	}
 }
