@@ -57,7 +57,6 @@ public class CompletePlayerController : MonoBehaviour {
 		//Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
 		if (other.gameObject.CompareTag ("PickUp")) 
 		{
-
 			//Add one to the current value of our count variable.
 			count = count - 1;
 
@@ -65,8 +64,10 @@ public class CompletePlayerController : MonoBehaviour {
 				hasLost = true; 
 			}
 				
-			gameObject.SetActive(false);
-			endGame ();
+			if (hasLost) {
+				gameObject.SetActive (false);
+				endGame ();
+			}
 		}
 	}
 
