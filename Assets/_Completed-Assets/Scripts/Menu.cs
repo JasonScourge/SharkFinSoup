@@ -7,6 +7,7 @@ public class Menu : MonoBehaviour {
 
 	public GameObject instructionPanel;
 	public GameObject creditPanel;
+	public GameObject creditPanel2;
 
 	public void startGame() {
 		SceneManager.LoadScene (1);
@@ -32,5 +33,14 @@ public class Menu : MonoBehaviour {
 		Application.Quit ();
 	}
 
+	public void nextPage(){
+		creditPanel.SetActive (false);
+		creditPanel2.SetActive (true);
+	}
+
+	public void backPage(){
+		creditPanel2.SetActive (false);
+		creditPanel.SetActive (true);
+	}
 
 }

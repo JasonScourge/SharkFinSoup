@@ -1,4 +1,4 @@
-OSXStandalone
+WindowsStandalone
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ResetTime
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -114,7 +114,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 5a13a13c24e527e3510e2fbe3fdb0592 Assembly-CSharp.dll:.Spawning
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LosingScene
 dd5481137759597d614818793c90a7fe Assembly-CSharp.dll:.MoveIt
-6ba3d8d5443b63ae7598a4982af2be90 Assembly-CSharp.dll:.Menu
+ba256bba4247f0a1e2c041d4aac8bd8a Assembly-CSharp.dll:.Menu
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
