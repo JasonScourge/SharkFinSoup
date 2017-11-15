@@ -9,13 +9,13 @@ using UnityEngine.UI;
 public class CompletePlayerController : MonoBehaviour {
 	public Sprite deadPlayerSprite;
 
-	public AudioSource deathSoundSource;
-	public AudioClip deathSound;
-	public float playerSpeed;		//Floating point variable to store the player's movement speed.
+	public AudioSource deathSoundSource;	
+	public AudioClip deathSound;			
+	public float playerSpeed;				//Floating point variable to store the player's movement speed.
 
-	private int count;				//Integer to store the number of pickups collected so far.
-	private bool hasLost; 			//To determine if the game is over yet.
-	private bool isSharkThere; 		//To prevent the cons
+	private int count;						//Integer to store the number of pickups collected so far.
+	private bool hasLost; 					//To determine if the game is over yet.
+	private bool isEaten; 					//To prevent the constant destroyal of the sharks
 
 	// Use this for initialization
 	void Start()
@@ -25,6 +25,9 @@ public class CompletePlayerController : MonoBehaviour {
 
 		//Initialize win to false.
 		hasLost = false; 
+
+		//Initialize eaten state to false;
+		isEaten = false;
 	}
 
 	//FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
@@ -65,16 +68,19 @@ public class CompletePlayerController : MonoBehaviour {
 			}
 
 			if (hasLost) {
-				Destroy (other.gameObject);
-				deathSoundSource.PlayOneShot (deathSound);
-				GetComponent<Animator> ().SetBool ("isDead", true);
-				StartCoroutine ("endGame");
+				if (!isEaten) {
+					isEaten = true;
+					Destroy (other.gameObject);
+					deathSoundSource.PlayOneShot (deathSound);
+					GetComponent<Animator> ().SetBool ("isDead", true);
+					StartCoroutine ("endGame");
+				}
 			}
 		}
 	}
 
 	IEnumerator endGame() {
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSecondsRealtime(2.5f);
 		SceneManager.LoadScene (2);
 	}
 }
