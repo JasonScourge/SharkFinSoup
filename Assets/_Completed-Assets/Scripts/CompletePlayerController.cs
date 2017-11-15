@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CompletePlayerController : MonoBehaviour {
-	public GameObject playerAlive;
-	public GameObject playerDead;
 	public Sprite deadPlayerSprite;
 
 	public AudioSource deathSoundSource;
@@ -17,7 +15,7 @@ public class CompletePlayerController : MonoBehaviour {
 
 	private int count;				//Integer to store the number of pickups collected so far.
 	private bool hasLost; 			//To determine if the game is over yet.
-	private float updateRespawn;	//Respawn timer for the rocks.
+	private bool isSharkThere; 		//To prevent the cons
 
 	// Use this for initialization
 	void Start()
@@ -67,6 +65,7 @@ public class CompletePlayerController : MonoBehaviour {
 			}
 
 			if (hasLost) {
+				Destroy (other.gameObject);
 				deathSoundSource.PlayOneShot (deathSound);
 				GetComponent<Animator> ().SetBool ("isDead", true);
 				StartCoroutine ("endGame");

@@ -6,7 +6,7 @@ public class MoveIt : MonoBehaviour {
 	// Can be change in the engine editor
 	/// Privatising this variable is also fine
 	/// Just that the getter method has to be used instead
-	public float speed = 5f;
+	public float speed = 4f;
 
 	private Vector2 dir; 
 

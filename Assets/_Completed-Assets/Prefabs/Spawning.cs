@@ -28,7 +28,7 @@ public class Spawning : MonoBehaviour {
 		
 	// FixedUpdate is called at a fixed interval and is independent of frame rate.
 	void FixedUpdate () {
-		Time.timeScale = 1.0f + speedTrackerMultiplier/85;
+		Time.timeScale = 1.0f + speedTrackerMultiplier/65;
 	}
 
 	void spawningSharks(){
