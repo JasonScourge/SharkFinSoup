@@ -1,16 +1,20 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Adding this allows us to access members of the UI namespace including Text.
+// Adding this allows us to access members of the UI namespace including Text.
 using UnityEngine.UI;
 
 public class CompletePlayerController : MonoBehaviour {
+	public GameObject playerAlive;
+	public GameObject playerDead;
+	public Sprite deadPlayerSprite;
+
 	public AudioSource deathSoundSource;
 	public AudioClip deathSound;
 	public float playerSpeed;		//Floating point variable to store the player's movement speed.
 
-	private Rigidbody2D rb2d;		//Store a reference to the Rigidbody2D component required to use 2D Physics.
 	private int count;				//Integer to store the number of pickups collected so far.
 	private bool hasLost; 			//To determine if the game is over yet.
 	private float updateRespawn;	//Respawn timer for the rocks.
@@ -18,9 +22,6 @@ public class CompletePlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
-		//Get and store a reference to the Rigidbody2D component so that we can access it.
-		rb2d = GetComponent<Rigidbody2D> ();
-
 		//Initialize count to zero.
 		count = 1;
 
@@ -64,16 +65,17 @@ public class CompletePlayerController : MonoBehaviour {
 			if (count <= 0) {
 				hasLost = true; 
 			}
-				
+
 			if (hasLost) {
 				deathSoundSource.PlayOneShot (deathSound);
-				gameObject.SetActive (false);
-				endGame ();
+				GetComponent<Animator> ().SetBool ("isDead", true);
+				StartCoroutine ("endGame");
 			}
 		}
 	}
 
-	void endGame() {
+	IEnumerator endGame() {
+		yield return new WaitForSeconds(2.0f);
 		SceneManager.LoadScene (2);
 	}
 }
