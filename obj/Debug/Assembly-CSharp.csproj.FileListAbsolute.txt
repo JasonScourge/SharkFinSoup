@@ -62,3 +62,41 @@ D:\Project Unity\Game-Development-Prototype\Temp\bin\Debug\UnityEngine.HoloLens.
 D:\Project Unity\Game-Development-Prototype\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 D:\Project Unity\Game-Development-Prototype\obj\Debug\Assembly-CSharp.dll
 D:\Project Unity\Game-Development-Prototype\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\nunit.framework.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.Analytics.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.HoloLens.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.Purchasing.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.SpatialTracking.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.TestRunner.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.Timeline.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.UIAutomation.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\Unity.Cecil.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\ExCSS.Unity.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\Unity.Cecil.Pdb.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\Unity.Cecil.Mdb.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.xml
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEditor.xml
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.TestRunner.xml
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\nunit.framework.xml
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.Timeline.xml
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.UIAutomation.xml
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.HoloLens.xml
+C:\Users\Userman\Desktop\TempSharkFinSoup\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
+C:\Users\Userman\Desktop\TempSharkFinSoup\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Userman\Desktop\TempSharkFinSoup\obj\Debug\Assembly-CSharp.dll
+C:\Users\Userman\Desktop\TempSharkFinSoup\obj\Debug\Assembly-CSharp.pdb

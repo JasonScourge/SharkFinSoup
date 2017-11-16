@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\TutorialInfo\Scripts\Editor\TutorialInfoEditor.cs" />
      <None Include="Assets\TutorialInfo\Fonts\LICENSE.txt" />
+     <None Include="Assets\_Completed-Assets\Prefabs\SFX\CREDITS-TO-BE-DOCUMENTED.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
