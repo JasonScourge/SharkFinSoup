@@ -1,2 +1,5 @@
 150222__killkhan__menu-select: 
 https://freesound.org/people/killkhan/sounds/150222/
+
+sf3-sfx-menu-validate.wav:
+https://freesound.org/people/broumbroum/sounds/50565/

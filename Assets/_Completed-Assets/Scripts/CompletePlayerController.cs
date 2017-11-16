@@ -8,13 +8,12 @@ using UnityEngine.UI;
 
 public class CompletePlayerController : MonoBehaviour {
 	public Sprite deadPlayerSprite;
-
 	public AudioSource deathSoundSource;	
-	public AudioClip deathSound;			
+	public AudioClip deathSound;	
+	public bool hasLost;
 	public float playerSpeed;				//Floating point variable to store the player's movement speed.
 
 	private int count;						//Integer to store the number of pickups collected so far.
-	private bool hasLost; 					//To determine if the game is over yet.
 	private bool isEaten; 					//To prevent the constant destroyal of the sharks
 
 	// Use this for initialization
@@ -79,8 +78,14 @@ public class CompletePlayerController : MonoBehaviour {
 		}
 	}
 
+	// Ends the game and loads the losing scene
 	IEnumerator endGame() {
 		yield return new WaitForSecondsRealtime(2.5f);
 		SceneManager.LoadScene (2);
+	}
+
+	// Getter method to query the game state if the player has lost or not
+	public bool getHasLost(){
+		return hasLost;
 	}
 }
