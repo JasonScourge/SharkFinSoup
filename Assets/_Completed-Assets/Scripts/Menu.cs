@@ -27,6 +27,7 @@ public class Menu : MonoBehaviour {
 
 	public void closeCredit() {
 		creditPanel.SetActive (false);
+		creditPanel2.SetActive (false);
 	}
 
 	public void exitGame() {

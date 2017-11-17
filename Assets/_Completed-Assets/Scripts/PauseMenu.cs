@@ -10,41 +10,40 @@ public class PauseMenu : MonoBehaviour {
 	public GameObject[] countdown;
 
 	private float StoredTime; 
-	private bool canPause;
+	private bool stopPause;
 	private bool isPaused;
 
 	public void startGame() {
 		isPaused = false;
-		canPause = true;
+		stopPause = false;
 		SceneManager.LoadScene (1);
 	}
 
 	public void Update (){
 		// Disable the pause function if the player has lost
 		if (player.GetComponent<CompletePlayerController>().hasLost) {
-			canPause = false;
+			isPaused = true;
 		}
 
 		/// Be careful when using Input.GetKey, Input.GetKeyDown and Input.GetKeyUp
 		/// They mean very different things
 		/// Read the suggestions or documentations in detail before choosing which one to use
 		if (Input.GetKeyDown("p")) {
-				// Necessary to check if it is paused or not before deciding to pause or unpause
-				if (!isPaused) {
-					isPaused = true;
-					pauseGame ();
-				} else {
-					isPaused = false; 
-					resumeGame ();
-				}
+			// Necessary to check if it is paused or not before deciding to pause or unpause
+			if (!isPaused) {
+				pauseGame ();
+			} else {
+				resumeGame ();
+			}
 		}
 	}
-		
+
 	public void exitGame() {
 		Application.Quit ();
 	}
 
 	public void pauseGame(){
+		if (!stopPause) {
 			// Store the current game time
 			StoredTime = Time.timeScale;
 
@@ -57,15 +56,20 @@ public class PauseMenu : MonoBehaviour {
 
 			// Update current state if it is paused or not
 			isPaused = true;
+		}
 	}
 
 	public void resumeGame(){
+		if (!stopPause) {
+			stopPause = !stopPause;
+
 			// Recreates the pasue button and deactivates the pause screen
 			pauseMenu.SetActive (false);
 			pauseButton.SetActive (true);
 
 			// Triggering the countdown
 			StartCoroutine ("resumeTiming");
+		}
 	}
 
 	IEnumerator resumeTiming() {
@@ -77,7 +81,7 @@ public class PauseMenu : MonoBehaviour {
 				countdown [i].SetActive (true);
 				countdown [i - 1].SetActive (false);
 			}
-			yield return new WaitForSecondsRealtime (1.1f);
+			yield return new WaitForSecondsRealtime (1.0f);
 		}
 		countdown [countdown.Length - 1].SetActive (false);
 
@@ -85,6 +89,8 @@ public class PauseMenu : MonoBehaviour {
 		Time.timeScale = StoredTime;
 
 		// Updates current state
+		yield return new WaitForSecondsRealtime (0.1f);
 		isPaused = false;
+		stopPause = !stopPause;
 	}
 }

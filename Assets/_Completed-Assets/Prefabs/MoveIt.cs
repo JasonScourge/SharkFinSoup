@@ -10,11 +10,6 @@ public class MoveIt : MonoBehaviour {
 
 	private Vector2 dir; 
 
-	// Use this for initialization
-	void Start () {
-
-	}
-
 	// Update is called once per frame
 	void Update () {
 		// Moves from top to down
